@@ -427,7 +427,53 @@
   }
   .contact-card a:hover { text-decoration: underline; }
 
-  /* ── PETITION CTA BLOCK ── */
+  /* ── CORRIDOR MAP ── */
+  .map-figure {
+    margin: 28px 0;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .map-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .map-caption {
+    background: #f4f8fc;
+    border-top: 1px solid var(--rule);
+    padding: 10px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    text-transform: uppercase;
+  }
+
+  /* ── DOWNLOAD BUTTON ── */
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-top: 12px;
+  }
+  .download-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+    color: #fff;
+  }
   .petition-block {
     background: #152238;
     color: #fff;
@@ -536,6 +582,10 @@
     <img src="logo.jpg" alt="NE A2 Barriers" class="hero-logo">
     <p class="hero-sub">MDOT approved sound barriers for communities to our south and west. A gap between two separate studies left Chapel Hill, Arbor Hills, North Oaks, Foxfire, and neighboring developments without any noise analysis at all.</p>
     <a href="https://www.change.org/p/mdot-and-michigan-legislature-study-and-fund-noise-barriers-for-the-m-14-us-23-corridor" class="hero-cta" target="_blank" rel="noopener">Sign the Petition &rarr;</a>
+    <br>
+    <a href="NEA2Barriers_CommunityOverview.docx" class="download-btn" download>
+      &#8595; Download Community Briefing (Word)
+    </a>
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-number">~2,800</span>
@@ -642,7 +692,10 @@
 
     <p>The following residential communities sit alongside the M-14 / US-23 gap corridor. None received a noise analysis under either active MDOT study.</p>
 
-    <div class="community-grid">
+    <figure class="map-figure">
+      <img src="corridor_map.jpg" alt="Map of the M-14 / US-23 corridor in northeast Ann Arbor showing affected residential communities">
+      <figcaption class="map-caption">M-14 / US-23 gap corridor, northeast Ann Arbor &mdash; affected communities outlined in blue</figcaption>
+    </figure>
       <div class="community-item">Chapel Hill Condominiums<span>~425 units</span></div>
       <div class="community-item">North Oaks<span>~472 units</span></div>
       <div class="community-item">Foxfire<span>~363 units</span></div>
@@ -667,7 +720,12 @@
 
     <ul class="ref-list">
       <li>
-        <span class="ref-tag mdot">MDOT</span>
+        <span class="ref-tag" style="background:#1a2e4a;">Download</span>
+        <div>
+          <a href="NEA2Barriers_CommunityOverview.docx" download>NE A2 Barriers — Community Overview (Word document)</a>
+          <span class="ref-desc">Full community briefing covering the study gap, affected neighborhoods, health impacts, and legislative ask. Suitable for sharing with neighbors, HOA boards, and elected officials.</span>
+        </div>
+      </li>
         <div>
           <a href="https://www.michigan.gov/mdot/projects-studies/studies/m-14-ann-arbor-noise-analysis" target="_blank" rel="noopener">M-14 Ann Arbor Noise Analysis (PA 121 of 2024)</a>
           <span class="ref-desc">Official MDOT study page. Coverage: Newport Road to North Maple Road. Funded by the Michigan Legislature, $3M appropriation.</span>
