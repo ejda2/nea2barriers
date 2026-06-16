@@ -96,6 +96,45 @@
   .site-footer { background: #0c1520; color: rgba(255,255,255,0.5); text-align: center; padding: 28px 24px; font-size: 0.82rem; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
   .site-footer a { color: rgba(255,255,255,0.6); }
 
+  /* FAQ */
+  .faq-section { margin-top: 52px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+  details {
+    background: var(--light);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-bottom: 12px;
+    padding: 0;
+  }
+  summary {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.95rem;
+    padding: 18px 22px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--navy);
+    list-style: none;
+    position: relative;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 22px;
+    font-size: 1.4rem;
+    color: var(--mid);
+    transition: transform 0.2s;
+  }
+  details[open] summary::after {
+    content: '−';
+    transform: rotate(0deg);
+  }
+  .faq-answer {
+    padding: 0 22px 22px;
+    color: #2d3748;
+    line-height: 1.65;
+  }
+
   @media (max-width: 640px) {
     .header-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
     .community-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
@@ -214,6 +253,33 @@
     <div class="info-box">
       <p>The people least able to move away from the highway are the ones absorbing the most of it. Addressing that requires coordinated action on noise, housing, and transit, not three separate conversations.</p>
     </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <span class="section-label">Common Questions</span>
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How does this connect to affordable housing and workforce development?</summary>
+      <div class="faq-answer">
+        <p>Highway-adjacent land is often the most affordable for new multifamily and workforce housing. Without noise mitigation, we are building future affordable units in the noisiest locations. Sound barriers make these developments healthier and more equitable.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Why focus on this corridor specifically?</summary>
+      <div class="faq-answer">
+        <p>This is the only major residential corridor in northeast Ann Arbor that was removed from active MDOT studies. Neighboring communities received studies and barriers; this gap was created by a boundary revision that was never clearly communicated to residents.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Will this affect traffic or highway capacity?</summary>
+      <div class="faq-answer">
+        <p>No. Noise barriers are built alongside the existing highway footprint and do not impact lanes, speed, or capacity. They are a standard environmental mitigation tool used across Michigan and the U.S.</p>
+      </div>
+    </details>
   </section>
 
   <!-- PETITION CTA -->
