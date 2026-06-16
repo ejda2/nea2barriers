@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why This Matters Beyond Our Neighborhood | NE A2 Barriers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #1a2e4a;
+    --blue:    #2a5f8f;
+    --mid:     #3d7ab5;
+    --light:   #e8f1f8;
+    --amber:   #b8720a;
+    --amber-bg:#fef3dc;
+    --red:     #9b1c1c;
+    --green:   #1a6b3a;
+    --green-bg:#e8f5ee;
+    --gray:    #4a5568;
+    --rule:    #c8d8e8;
+    --paper:   #fafaf8;
+    --ink:     #1a1a2e;
+    --pg:      #1a7a3a;
+    --pg-hover:#145e2c;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--paper); color: var(--ink); font-size: 17px; line-height: 1.75; }
+
+  /* HEADER */
+  .site-header { background: #152238; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,0.35); border-bottom: 1px solid rgba(200,216,232,0.1); }
+  .header-inner { max-width: 960px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .site-name { text-decoration: none; display: flex; align-items: center; flex-shrink: 0; }
+  .site-name img { height: 44px; width: auto; display: block; }
+  .header-nav { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .header-nav a { font-family: 'DM Mono', monospace; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: #a8c8e8; text-decoration: none; padding: 5px 10px; border: 1px solid rgba(168,200,232,0.3); border-radius: 2px; transition: all 0.2s; white-space: nowrap; }
+  .header-nav a:hover { background: var(--mid); color: #fff; border-color: var(--mid); }
+  .header-nav a.active { background: rgba(61,122,181,0.25); color: #fff; border-color: var(--mid); }
+  .header-nav a.cta { background: var(--pg); border-color: var(--pg); color: #fff; font-weight: 500; }
+  .header-nav a.cta:hover { background: var(--pg-hover); }
+
+  /* PAGE HERO */
+  .page-hero { background: #152238; color: #fff; padding: 52px 24px 44px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 0%, rgba(74,111,165,0.18) 0%, transparent 60%), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.012) 60px, rgba(255,255,255,0.012) 61px); pointer-events: none; }
+  .page-hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+  .page-hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: #7eb8e8; margin-bottom: 14px; display: block; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.25; color: #c8dff0; margin-bottom: 18px; }
+  .page-hero .subhead { color: rgba(255,255,255,0.65); font-size: 1rem; font-family: 'Source Serif 4', serif; line-height: 1.7; max-width: 620px; }
+
+  /* MAIN */
+  .main-content { max-width: 960px; margin: 0 auto; padding: 0 24px 60px; }
+
+  /* SECTIONS */
+  .section { margin-top: 52px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  .section:first-child { margin-top: 40px; padding-top: 0; border-top: none; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); margin-bottom: 10px; display: block; }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 20px; }
+  .section h3 { font-family: 'Source Serif 4', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 24px 0 8px; border-left: 3px solid var(--mid); padding-left: 10px; }
+  .section p { margin-bottom: 14px; color: #2d3748; }
+  .section p:last-child { margin-bottom: 0; }
+
+  /* COMMUNITY GRID */
+  .community-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; }
+  .community-item { background: #f0f6fc; border: 1px solid var(--rule); padding: 10px 14px; font-size: 0.88rem; color: var(--navy); font-weight: 500; border-radius: 3px; }
+  .community-item span { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--gray); display: block; margin-top: 3px; }
+
+  /* STAT CALLOUT */
+  .stat-callout { background: var(--light); border: 1px solid var(--rule); border-left: 5px solid var(--blue); padding: 22px 26px; margin: 28px 0; border-radius: 0 4px 4px 0; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+  .stat-callout .big-stat { flex-shrink: 0; }
+  .stat-callout .stat-number { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: var(--navy); line-height: 1; display: block; }
+  .stat-callout .stat-pct { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-top: 4px; display: block; }
+  .stat-callout .stat-desc { color: var(--navy); font-size: 0.97rem; line-height: 1.65; }
+
+  /* PULL QUOTE */
+  blockquote { border-left: 4px solid var(--amber); padding: 6px 0 6px 20px; margin: 24px 0; color: var(--navy); font-size: 1.08rem; font-style: italic; line-height: 1.65; }
+
+  /* INFO BOXES */
+  .info-box { background: var(--light); border: 1px solid var(--rule); border-left: 4px solid var(--mid); padding: 18px 22px; margin: 24px 0; border-radius: 0 4px 4px 0; }
+  .info-box p { color: var(--navy); font-size: 0.96rem; margin-bottom: 10px; }
+  .info-box p:last-child { margin-bottom: 0; }
+  .green-box { background: var(--green-bg); border: 1px solid #a8d5bc; border-left: 4px solid var(--green); padding: 18px 22px; margin: 24px 0; border-radius: 0 4px 4px 0; }
+  .green-box p { color: #1a3d28; font-size: 0.96rem; margin-bottom: 10px; }
+  .green-box p:last-child { margin-bottom: 0; }
+
+  /* PETITION BLOCK */
+  .petition-block { background: #152238; color: #fff; padding: 48px 36px; text-align: center; margin: 52px 0 0; border-radius: 4px; }
+  .petition-block h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: #fff; margin-bottom: 14px; }
+  .petition-block p { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 28px; font-size: 1rem; }
+  .petition-link { display: inline-block; background: var(--pg); color: #fff; font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.08em; padding: 17px 40px; text-decoration: none; border-radius: 3px; transition: background 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+  .petition-link:hover { background: var(--pg-hover); }
+  .btn-secondary { display: inline-block; background: transparent; color: rgba(255,255,255,0.75); font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.07em; padding: 15px 28px; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; text-decoration: none; transition: all 0.2s; margin-left: 12px; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); color: #fff; }
+
+  /* FOOTER */
+  .site-footer { background: #0c1520; color: rgba(255,255,255,0.5); text-align: center; padding: 28px 24px; font-size: 0.82rem; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
+  .site-footer a { color: rgba(255,255,255,0.6); }
+
+  @media (max-width: 640px) {
+    .header-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .community-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-callout { flex-direction: column; gap: 10px; }
+    .petition-block { padding: 32px 20px; }
+    .btn-secondary { margin-left: 0; margin-top: 10px; display: block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-name">
+      <img src="logo.jpg" alt="NE A2 Barriers">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html#the-problem">The Problem</a>
+      <a href="index.html#communities">Communities</a>
+      <a href="index.html#framework">Funding</a>
+      <a href="broader-context.html" class="active">Why It Matters</a>
+      <a href="index.html#contacts">Contacts</a>
+      <a href="https://www.change.org/p/mdot-and-michigan-legislature-study-and-fund-noise-barriers-for-the-m-14-us-23-corridor" class="cta" target="_blank" rel="noopener">Sign the Petition</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-eyebrow">NE A2 Barriers</span>
+    <h1>Why This Matters Beyond Our Neighborhood</h1>
+    <p class="subhead">Our ask is narrow and near-term. The forces behind it connect to affordable housing, workforce displacement, and how Ann Arbor manages the highways that run through its residential areas.</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main-content">
+
+  <!-- 1. THE ASK -->
+  <section class="section" id="the-ask">
+    <span class="section-label">Our goal</span>
+    <h2>A formal study. The same process our neighbors received.</h2>
+    <p>NE A2 Barriers has a specific, near-term goal: inclusion in a formal MDOT noise abatement study for the residential corridor along US-23 and M-14 between Plymouth and Earhart Roads, and effective sound mitigation within the next decade.</p>
+    <p>In November 2025, MDOT revised the US-23 Improvement Study boundary, moving the southern limit north to the Earhart Road overpass. Six noise barriers were approved for communities that remained inside that boundary. The communities removed from the study got nothing, and no explanation. The ask is inclusion in a formal study. The same process neighboring communities received.</p>
+    <div class="green-box">
+      <p>We are not asking MDOT to build barriers. We are asking for inclusion in a noise abatement study. Every number cited on this page is context for why that process matters, and why people working on housing, transit, and equity in Ann Arbor should care whether it happens.</p>
+    </div>
+  </section>
+
+  <!-- 2. WHO GOT LEFT OUT -->
+  <section class="section" id="equity">
+    <span class="section-label">Who got left out</span>
+    <h2>A corridor that is predominantly multifamily and rental.</h2>
+    <p>The communities removed from the US-23 study boundary represent roughly 3,500 households across seven neighborhoods between Plymouth and Earhart Roads.</p>
+
+    <div class="community-grid">
+      <div class="community-item">Chapel Hill<span>425 units &middot; Condominium</span></div>
+      <div class="community-item">North Oaks<span>472 units &middot; Condominium</span></div>
+      <div class="community-item">Owl Creek<span>265+ units &middot; Apartment</span></div>
+      <div class="community-item">Greenbrier<span>500 units &middot; Apartment</span></div>
+      <div class="community-item">Village Park of Ann Arbor<span>Apartment</span></div>
+      <div class="community-item">Arbor Hills<span>Single-family</span></div>
+      <div class="community-item">Foxfire<span>Single-family</span></div>
+    </div>
+
+    <p>The corridor is more renter-heavy and more economically diverse than the single-family neighborhoods that stayed in the study and received noise barrier consideration. Renters and multifamily residents are less likely to have the organizational infrastructure to demand a noise study, attend MDOT open houses, or sustain a petition campaign. The result is a pattern where highway noise mitigation flows toward communities that can organize, and away from those that cannot.</p>
+  </section>
+
+  <!-- 3. AFFORDABLE HOUSING -->
+  <section class="section" id="affordable-housing">
+    <span class="section-label">The broader pattern</span>
+    <h2>Affordable housing and highway noise are the same problem.</h2>
+    <p>The same market forces that make highway-adjacent land affordable to develop also make it the worst place to live from a noise and air quality standpoint. This is already visible elsewhere in Ann Arbor. The Bryant Elementary neighborhood along I-94 on the south side of the city has a significant concentration of affordable and lower-income housing and no sound barriers. Residents there absorb highway noise and emissions around the clock with no mitigation, for the same reason the NE A2 corridor does: the political and organizational capacity to demand a study was never there.</p>
+
+    <blockquote>As Ann Arbor's developable land shrinks, future affordable housing will increasingly be built in the highest-noise, highest-emissions locations in the city.</blockquote>
+
+    <p>The city's Comprehensive Plan acknowledges that infill development is increasingly the only option as Ann Arbor reaches its physical boundaries. Land along the I-94, US-23, and M-14 corridors is among the most viable for multifamily and affordable development precisely because highway proximity has suppressed its value.</p>
+    <p>Affordable housing advocates who do not also push for sound abatement are accepting that low-income residents will bear environmental costs that wealthier neighborhoods have successfully avoided. Sound abatement is not a luxury amenity. It is a health and equity issue that belongs in every affordable housing conversation in this city.</p>
+  </section>
+
+  <!-- 4. CONCORDIA / WORKFORCE HOUSING -->
+  <section class="section" id="concordia">
+    <span class="section-label">A concrete opportunity</span>
+    <h2>U-M workforce housing and the Concordia campus.</h2>
+    <p>The University of Michigan recently acquired the former Concordia University campus, located directly on the US-23/M-14 corridor in northeast Ann Arbor. U-M's November 2025 salary report shows that 52,523 faculty and staff work on the Ann Arbor campus.</p>
+
+    <div class="stat-callout">
+      <div class="big-stat">
+        <span class="stat-number">16,256</span>
+        <span class="stat-pct">31% of Ann Arbor campus workforce</span>
+      </div>
+      <p class="stat-desc">U-M Ann Arbor employees earn at or below 80% of Washtenaw County's Area Median Income, the standard eligibility threshold for workforce housing programs. Nearly one in three U-M employees cannot comfortably afford Ann Arbor's market-rate rents, which run $1,800 to $2,400 per month for a one-bedroom.</p>
+    </div>
+
+    <p>The university is spending $631 million on 2,300 new student beds on the former Elbel Field site. No comparable investment exists for its workforce. Concordia is the most realistic near-term site to change that.</p>
+    <p>If workforce housing is built at Concordia, adjacent to the US-23/M-14 merge, sound abatement for that corridor stops being a neighborhood petition and becomes a condition of responsible development.</p>
+  </section>
+
+  <!-- 5. TRANSIT -->
+  <section class="section" id="transit">
+    <span class="section-label">Transit and commuting</span>
+    <h2>Workers priced out of the city drive in on the same corridors.</h2>
+    <p>Ann Arbor's Comprehensive Plan projects that more than 120,000 workers will commute into the city by 2050, up from roughly 80,000 today. Workers priced out of Ann Arbor drive in from Ypsilanti, Saline, and Canton, adding traffic and emissions to the same corridors that already impose the heaviest noise burden on nearby residents.</p>
+    <p>Workforce housing near North Campus and the medical complex would put thousands of lower- and moderate-income U-M employees within biking or transit distance of their jobs, reducing car trips on the corridor. Transit investment and noise abatement address different symptoms of the same underlying problem: a highway system built through residential areas that has never been managed with those residents' health and quality of life as a priority.</p>
+
+    <div class="info-box">
+      <p>The people least able to move away from the highway are the ones absorbing the most of it. Addressing that requires coordinated action on noise, housing, and transit, not three separate conversations.</p>
+    </div>
+  </section>
+
+  <!-- PETITION CTA -->
+  <div class="petition-block">
+    <h2>Add Your Name</h2>
+    <p>The ask is simple: a formal noise abatement study for our corridor. The same process that communities to our north received.</p>
+    <a href="https://www.change.org/p/mdot-and-michigan-legislature-study-and-fund-noise-barriers-for-the-m-14-us-23-corridor" class="petition-link" target="_blank" rel="noopener">Sign the Petition on Change.org &rarr;</a>
+    <a href="index.html" class="btn-secondary">Return to Overview</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Resident-led advocacy &nbsp;&bull;&nbsp; Not an HOA communication &nbsp;&bull;&nbsp; Ann Arbor, MI 48105 &nbsp;&bull;&nbsp; <a href="mailto:neA2barriers@gmail.com">neA2barriers@gmail.com</a></p>
+  <p style="margin-top:8px; font-size:0.73rem; opacity:0.6;">U-M salary data: University of Michigan Salary Rate of Faculty and Staff, November 2025. Workforce housing AMI threshold: HUD Washtenaw County 2024 income limits. Last updated June 2026.</p>
+</footer>
+
+</body>
+</html>
